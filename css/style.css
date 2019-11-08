@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Ubuntu&display=swap');
+
+body{
+  font-family: 'EB Garamond', serif;
+  color: #093a47;
+  background-color: #f0fffe;
+  margin: 0;
+}
+
+h1{
+  color: #fc8751;
+  font-family: 'Ubuntu', sans-serif;
+  margin-top: 0px;
+}
+
+h2{
+  color: #fc8751;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 10px 0px;
+}
+
+h3{
+  color: #ffa347;
+  margin: 5px 10px;
+}
+
+section p{
+  font-size: 17px;
+  margin: 5px;
+}
+
+a {
+  color: #036cad;
+}
+
+a:visited {
+  color: #cf007c;
+}
+
+a:hover {
+  color: #147a45;
+}
+
+a:active {
+  color: #0fbd62
+}
+
+#wrapper {
+  background-color: #def9ff;
+  max-width: 750px;
+  padding: 20px;
+	margin: 0 auto;
+  margin-top: 25px;
+  border-radius: 12px 12px 0px 0px;
+  box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.2);
+			}
+
+#image{
+  grid-area: image;
+}
+#image img{
+  padding: 5px;
+  border: 3px dotted #ffa347;
+  border-radius: 25px;
+}
+#image p{
+  font-size: 10px;
+  color: #fc8751;
+  margin-top: 0px;
+  margin-left: 20px;
+}
+#about{
+  grid-area: about;
+}
+
+#education{
+  grid-area: education;
+}
+
+#education p{
+  margin-left: 15px;
+}
+
+#experience{
+  grid-area: experience;
+}
+
+#experience p{
+  margin-left: 15px;
+}
+
+#skills{
+  grid-area: skills;
+}
+
+main{
+  .grid{
+  display: grid;
+  grid-template-columns: 1fr 2fr ;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  grid-template-areas:
+    "image about"
+    "education experience"
+    "skills skills";
+  }
+
+  @media(max-width: 450px) {
+    .grid{
+      grid-template-columns: 1fr;
+      grid-template-areas:
+      "image"
+      "about"
+      "education"
+      "experience"
+      "skills";
+      }
+    }
+}
