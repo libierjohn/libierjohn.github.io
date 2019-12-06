@@ -1,118 +1,277 @@
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Ubuntu&display=swap');
 
 body{
-  font-family: 'EB Garamond', serif;
-  color: #093a47;
-  background-color: #f0fffe;
+  font-family: 'Merriweather', serif;
+  color: #444;
+  background: url("../images/triangle-mosaic.png");
   margin: 0;
 }
 
 h1{
   color: #fc8751;
   font-family: 'Ubuntu', sans-serif;
-  margin-top: 0px;
+  margin: 0;
 }
 
 h2{
   color: #fc8751;
   font-family: 'Ubuntu', sans-serif;
-  margin: 10px 0px;
+  margin: 0;
 }
 
 h3{
-  color: #ffa347;
-  margin: 5px 10px;
-}
-
-section p{
-  font-size: 17px;
-  margin: 5px;
+  color: #fc8751;
+  margin: 0;
 }
 
 a {
-  color: #036cad;
+  color: red;
 }
 
 a:visited {
-  color: #cf007c;
+  color: yellow;
 }
 
 a:hover {
-  color: #147a45;
+  color: orange;
 }
 
 a:active {
-  color: #0fbd62
+  color: yellow;
 }
 
-#wrapper {
-  background-color: #def9ff;
-  max-width: 750px;
+/* Front Page Template */
+
+#index .wrapper {
+  background-color: #eee;
+  max-width: 960px;
   padding: 20px;
-	margin: 0 auto;
-  margin-top: 25px;
-  border-radius: 12px 12px 0px 0px;
+	margin: 100px auto;
+  border-radius: 15px 15px 15px 15px;
   box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.2);
 			}
 
-#image{
+#index img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
   grid-area: image;
 }
-#image img{
-  padding: 5px;
-  border: 3px dotted #ffa347;
-  border-radius: 25px;
-}
-#image p{
-  font-size: 10px;
-  color: #fc8751;
-  margin-top: 0px;
-  margin-left: 20px;
-}
-#about{
-  grid-area: about;
+
+#index .intro{
+  grid-area: intro;
 }
 
-#education{
-  grid-area: education;
+#index .blurb{
+  grid-area: blurb;
 }
 
-#education p{
-  margin-left: 15px;
+#index nav{
+  grid-area: nav;
 }
 
-#experience{
-  grid-area: experience;
+#index nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: red;
 }
 
-#experience p{
-  margin-left: 15px;
+#index nav li {
+  float: left;
 }
 
-#skills{
-  grid-area: skills;
+#index nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-main{
+#index nav li a:hover {
+  background-color: white;
+  color: #555;
+}
+
+#index nav .active {
+  background-color: orange;
+  color: white;
+}
+
+#index footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #555;
+  color: white;
+  padding-left: 10px;
+  text-align: left;
+}
+
+#index footer li{
+  display: inline;
+  border-right: 1px solid white;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#index .credit{
+  float: right;
+  border: 0px;
+  margin-right: 50px;
+}
+
+#index main{
   display: grid;
-  grid-template-columns: 1fr 2fr ;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 20px;
   grid-template-areas:
-    "image about"
-    "education experience"
-    "skills skills";
+    "header"
+    "intro"
+    "image"
+    "blurb";
   }
+/* Subject Template */
 
-  @media screen and (max-width: 600px) {
-    main{
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-areas:
-      "image"
-      "about"
-      "experience"
-      "education"
-      "skills";
-    }
+.subject .wrapper {
+  background-color: #eee;
+  max-width: 960px;
+  padding: 20px;
+	margin: 50px auto 100px 225px;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.2);
+			}
+
+.subject img{
+  grid-area: image;
+}
+
+.subject #math{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  grid-area: image;
+}
+
+.subject #science{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  grid-area: image;
+}
+
+.subject #writing{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  grid-area: image;
+}
+.subject h1{
+  display: inline;
+  grid-area: header;
+}
+
+.subject .title{
+  border-right:  2px solid orange;
+  padding-right: 10px;
+}
+
+.subject .page{
+  padding-left: 10px;
+}
+
+.subject nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+  width: 100px;
+  top: 0;
+  left: 0;
+  background-color: red;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+}
+
+.subject nav li a {
+  display: block;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+
+.subject nav li a:hover {
+  background-color: white;
+  color: #555;
+}
+
+.subject nav .active {
+  background-color: orange;
+  color: white;
+}
+
+.subject footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #555;
+  color: white;
+  padding-left: 25px;
+  text-align: left;
+}
+
+.subject footer li{
+  display: inline;
+  border-right: 1px solid white;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.subject .credit{
+  float: right;
+  margin-right: 50px;
+  border: 0px;
+}
+
+.subject .intro{
+  grid-area: intro;
+}
+
+.subject .elem{
+  grid-area: elem;
+}
+
+.subject .high{
+  grid-area: high;
+}
+
+.subject .uni{
+  grid-area: uni;
+}
+
+.subject main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  grid-template-areas:
+    "header . ."
+    "intro intro intro"
+    ". image ."
+    "elem high uni";
   }
